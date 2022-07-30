@@ -1,2 +1,2 @@
-# Go template
-A template project for golang development
+# go-concurrency
+Try to understand concurrency in Go.

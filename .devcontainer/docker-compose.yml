@@ -8,9 +8,9 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - ..:/workspaces/go-template:delegated
+      - ..:/workspaces/go-concurrency:delegated
       - app_go_pkg_mod:/go/pkg/mod
-    working_dir: /workspaces/go-template
+    working_dir: /workspaces/go-concurrency
     cap_add:
       # For debugging with dlv
       - SYS_PTRACE
