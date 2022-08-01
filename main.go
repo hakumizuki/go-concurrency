@@ -1,30 +1,11 @@
 package main
 
 import (
-	"fmt"
-	"sync"
+	"github.com/hakumizuki/go-concurrency/mutex"
+	"github.com/hakumizuki/go-concurrency/wg"
 )
 
-func gr(s string, wg *sync.WaitGroup) {
-	defer wg.Done()
-	fmt.Println(s)
-}
-
 func main() {
-	ss := []string{
-		"A",
-		"B",
-		"C",
-	}
-
-	wg := &sync.WaitGroup{}
-	wg.Add(len(ss))
-
-	for i, s := range ss {
-		go gr(fmt.Sprintf("%d-%s", i, s), wg)
-	}
-
-	wg.Wait()
-
-	println("Finished ...")
+	wg.Main(false)
+	mutex.Main(true)
 }
